@@ -1,0 +1,65 @@
+@startuml
+skinparam classAttributeIconSize 0
+class pokemon {
+ -nome: string
+ -hp: int
+ -hpMax: int
+ -attacco: int
+ -difesa: int
+ -velocità: int
+ -tipo: String
+ -mosse: List<Mossa>
+ +Pokemon(nome : string, hp : int, hpMax : int, attacco:int, difesa:int, velocita:int, tipo : String, mosse : List<Mossa>)
+ +getnome():string
+ +gethp():int
+ +gethpMax():int
+ +getattacco():int
+ +getdifesa():int
+ +getvelocita():int
+ +gettipo():string
+ +getMosse(): List <Mossa>
+ +isVivo(): boolean
+ +subisciDanno(): void
+}
+
+class Mossa {
+ -nome: string
+ -potenza: int
+ -tipo: String
+ +Mossa(nome : string, potenza : int, tipo : String)
+ +getNome():string
+ +getPotenza():int
+}
+
+class Team {
+ -arraylist<> pokemon: Pokemon
+ -membri_max: int
+ +Team()
+ +aggiungiPokemon(): boolean
+ +getMembri(): List<Pokemon>
+ +getDimensione(): int
+ +isPieno(): boolean
+ +isVuoto(): boolean
+ +getPrimoPokemonVivo(): Pokemon
+ +haPokemonVivi(): boolean
+ +getPokemonVivi(): List<Pokemon>
+}
+
+class Allenatore {
+ -nome: string
+ -team: Team
+ +Allenatore(nome : string, team : Team)
+ +getNome():string
+ +geTeam():string
+ +haPokemonVivi():boolean
+ +getPrimoPokemonVivo():Pokemon
+ +aggiungiPokemon():boolean
+}
+
+class Pokedex {
+ -arraylist<> pokemon: Pokemon
+ +Pokedex(arraylist<> pokemon : Pokemon
+ +getPokemon(): void
+ +mostraPokedex(): void
+}
+@enduml
